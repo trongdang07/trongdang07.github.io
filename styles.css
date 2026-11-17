@@ -1,0 +1,259 @@
+        :root {
+            --bg-light: #e0e5ec;
+            --bg-dark: #2a2f38;
+            --primary-light: #5a9ee4;
+            --primary-dark: #6baaff;
+            --grey-light: #79838f;
+            --grey-dark: #a1acb9;
+            --light-shadow-1: #a3b1c6;
+            --light-shadow-2: #ffffff;
+            --dark-shadow-1: #1c1f26;
+            --dark-shadow-2: #383f4a;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        [data-bs-theme="light"] {
+            background-color: var(--bg-light);
+            color: var(--grey-light);
+        }
+        [data-bs-theme="dark"] {
+            background-color: var(--bg-dark);
+            color: var(--grey-dark);
+        }
+
+        /* === UPDATED: Main card styling === */
+        .neumorphic-card {
+            position: relative; /* Needed for absolute positioning of children */
+            width: 100%;
+            max-width: 320px;
+            padding: 1.25rem;
+            border-radius: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        [data-bs-theme="light"] .neumorphic-card {
+            background: var(--bg-light);
+            box-shadow: 7px 7px 15px var(--light-shadow-1), -7px -7px 15px var(--light-shadow-2);
+        }
+        [data-bs-theme="dark"] .neumorphic-card {
+            background: var(--bg-dark);
+            box-shadow: 7px 7px 15px var(--dark-shadow-1), -7px -7px 15px var(--dark-shadow-2);
+        }
+        
+        /* === UPDATED: FPS Counter Styling === */
+        #fps-counter {
+            position: absolute; /* Position relative to the card */
+            top: 1.25rem;
+            left: 1.25rem;
+            padding: 5px 10px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            z-index: 10;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+        [data-bs-theme="light"] #fps-counter {
+            background-color: rgba(224, 229, 236, 0.7);
+            color: #4a5668;
+            text-shadow: 1px 1px 1px var(--light-shadow-2);
+            box-shadow: 2px 2px 4px var(--light-shadow-1), -2px -2px 4px var(--light-shadow-2);
+        }
+        [data-bs-theme="dark"] #fps-counter {
+            background-color: rgba(42, 47, 56, 0.7);
+            color: #e0e5ec;
+            text-shadow: 1px 1px 1px var(--dark-shadow-1);
+            box-shadow: 2px 2px 4px var(--dark-shadow-1), -2px -2px 4px var(--dark-shadow-2);
+        }
+
+        .profile-pic {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            padding: 6px;
+        }
+        [data-bs-theme="light"] .profile-pic {
+            background: var(--bg-light);
+            box-shadow: inset 4px 4px 8px var(--light-shadow-1), inset -4px -4px 8px var(--light-shadow-2);
+        }
+        [data-bs-theme="dark"] .profile-pic {
+            background: var(--bg-dark);
+            box-shadow: inset 4px 4px 8px var(--dark-shadow-1), inset -4px -4px 8px var(--dark-shadow-2);
+        }
+
+        h1.card-title {
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+        [data-bs-theme="light"] h1.card-title {
+            color: #4a5668;
+            text-shadow: 1px 1px 2px var(--light-shadow-2), -1px -1px 2px var(--light-shadow-1);
+        }
+        [data-bs-theme="dark"] h1.card-title {
+            color: #e0e5ec;
+            text-shadow: 1px 1px 2px var(--dark-shadow-1), -1px -1px 2px var(--dark-shadow-2);
+        }
+
+        #user-bio {
+            font-size: 0.85rem;
+            font-weight: 400;
+        }
+        [data-bs-theme="light"] #user-bio {
+            text-shadow: 1px 1px 1px var(--light-shadow-2);
+        }
+        [data-bs-theme="dark"] #user-bio {
+             text-shadow: 1px 1px 1px var(--dark-shadow-1);
+        }
+        
+        .neumorphic-btn {
+            border: none;
+            outline: none;
+            cursor: pointer;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            transition: all 0.2s ease-in-out;
+            flex-shrink: 0;
+        }
+        [data-bs-theme="light"] .neumorphic-btn {
+            background: var(--bg-light);
+            box-shadow: 4px 4px 8px var(--light-shadow-1), -4px -4px 8px var(--light-shadow-2);
+            color: var(--grey-light);
+        }
+        [data-bs-theme="dark"] .neumorphic-btn {
+            background: var(--bg-dark);
+            box-shadow: 4px 4px 8px var(--dark-shadow-1), -4px -4px 8px var(--dark-shadow-2);
+            color: var(--grey-dark);
+        }
+        .neumorphic-btn:hover {
+            transform: translateY(-2px);
+            color: var(--primary-light);
+        }
+        [data-bs-theme="light"] .neumorphic-btn:hover {
+             box-shadow: 7px 7px 12px var(--light-shadow-1), -7px -7px 12px var(--light-shadow-2);
+        }
+        [data-bs-theme="dark"] .neumorphic-btn:hover {
+            color: var(--primary-dark);
+            box-shadow: 7px 7px 12px var(--dark-shadow-1), -7px -7px 12px var(--dark-shadow-2);
+        }
+        .neumorphic-btn:active {
+            transform: translateY(1px);
+        }
+        [data-bs-theme="light"] .neumorphic-btn:active {
+            box-shadow: inset 4px 4px 8px var(--light-shadow-1), inset -4px -4px 8px var(--light-shadow-2);
+        }
+        [data-bs-theme="dark"] .neumorphic-btn:active {
+            box-shadow: inset 4px 4px 8px var(--dark-shadow-1), inset -4px -4px 8px var(--dark-shadow-2);
+        }
+        .neumorphic-btn i {
+            transition: text-shadow 0.3s ease;
+        }
+        [data-bs-theme="light"] .neumorphic-btn i {
+            text-shadow: 1px 1px 2px var(--light-shadow-1);
+        }
+        [data-bs-theme="dark"] .neumorphic-btn i {
+            text-shadow: 1px 1px 2px var(--dark-shadow-1);
+        }
+        
+        .link-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+            justify-items: center;
+        }
+        .link-grid .neumorphic-btn {
+            width: 55px;
+            font-size: 1.1rem;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .banking-info {
+            padding: 0.75rem 1rem;
+            border-radius: 1rem;
+        }
+        [data-bs-theme="light"] .banking-info {
+            box-shadow: inset 4px 4px 8px var(--light-shadow-1), inset -4px -4px 8px var(--light-shadow-2);
+        }
+        [data-bs-theme="dark"] .banking-info {
+            box-shadow: inset 4px 4px 8px var(--dark-shadow-1), inset -4px -4px 8px var(--dark-shadow-2);
+        }
+        .banking-info p {
+            transition: text-shadow 0.3s ease;
+        }
+        [data-bs-theme="light"] .banking-info p {
+            text-shadow: 1px 1px 1px var(--light-shadow-2);
+        }
+        [data-bs-theme="dark"] .banking-info p {
+            text-shadow: 1px 1px 1px var(--dark-shadow-1);
+        }
+        .banking-info .small { font-size: 0.75rem; margin-bottom: 0.1rem; font-weight: 500; }
+        .account-number { font-weight: 600; font-size: 0.95rem; letter-spacing: 0.5px; }
+        [data-bs-theme="light"] .account-number { color: var(--primary-light); }
+        [data-bs-theme="dark"] .account-number { color: var(--primary-dark); }
+        
+        .neumorphic-player {
+            padding: 0.6rem 0.75rem;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        [data-bs-theme="light"] .neumorphic-player {
+            box-shadow: inset 4px 4px 8px var(--light-shadow-1), inset -4px -4px 8px var(--light-shadow-2);
+        }
+        [data-bs-theme="dark"] .neumorphic-player {
+            box-shadow: inset 4px 4px 8px var(--dark-shadow-1), inset -4px -4px 8px var(--dark-shadow-2);
+        }
+
+        .player-timeline {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            width: 100%;
+            font-size: 0.7rem;
+            font-weight: 500;
+        }
+        [data-bs-theme="light"] .player-timeline span {
+            text-shadow: 1px 1px 1px var(--light-shadow-2);
+        }
+        [data-bs-theme="dark"] .player-timeline span {
+            text-shadow: 1px 1px 1px var(--dark-shadow-1);
+        }
+        .progress-bar-container {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            cursor: pointer;
+            padding: 1px;
+        }
+        [data-bs-theme="light"] .progress-bar-container {
+            background: var(--bg-light);
+            box-shadow: inset 1px 1px 3px var(--light-shadow-1), inset -1px -1px 3px var(--light-shadow-2);
+        }
+        [data-bs-theme="dark"] .progress-bar-container {
+            background: var(--bg-dark);
+            box-shadow: inset 1px 1px 3px var(--dark-shadow-1), inset -1px -1px 3px var(--dark-shadow-2);
+        }
+        
+        .progress-bar-fill {
+            height: 100%;
+            width: 0;
+            border-radius: 3px;
+            transition: width 0.1s linear;
+        }
+        [data-bs-theme="light"] .progress-bar-fill { background-color: var(--primary-light); }
+        [data-bs-theme="dark"] .progress-bar-fill { background-color: var(--primary-dark); }
